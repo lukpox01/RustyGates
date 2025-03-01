@@ -44,7 +44,7 @@ impl And {
     pub fn new(a: Input, b: Input, name: Option<String>) -> Self {
         let name = match name {
             Some(name) => name,
-            None => format!("And-{}", rand::rng().random::<i16>()),
+            None => format!("And-{}", rand::rng().random::<u8>()),
         };
         And {
             inputs: [a, b],
@@ -71,7 +71,7 @@ impl Or {
     pub fn new(a: Input, b: Input, name: Option<String>) -> Self {
         let name = match name {
             Some(name) => name,
-            None => format!("Or-{}", rand::rng().random::<u16>()),
+            None => format!("Or-{}", rand::rng().random::<u8>()),
         };
 
         Or {
@@ -98,7 +98,7 @@ impl Not {
     pub fn new(a: Input, name: Option<String>) -> Self {
         let name = match name {
             Some(name) => name,
-            None => format!("Not-{}", rand::rng().random::<i16>()),
+            None => format!("Not-{}", rand::rng().random::<u8>()),
         };
         Not { inputs: [a], name }
     }
@@ -122,7 +122,7 @@ impl Output {
     pub fn new(a: Input, name: Option<String>) -> Self {
         let name = match name {
             Some(name) => name,
-            None => format!("Output-{}", rand::rng().random::<i16>()),
+            None => format!("Output-{}", rand::rng().random::<u8>()),
         };
 
         Output { inputs: [a], name }

@@ -37,6 +37,7 @@ impl Circuit {
         self.gates.insert(id.clone(), gate);
         id
     }
+
     pub fn get_gate(&self, id: &GateId) -> Option<&Gates> {
         self.gates.get(id)
     }
